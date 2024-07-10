@@ -23,4 +23,31 @@ function getHumanChoice() {
     return "" + input;
 }
 
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice) {
+    let message = "";
+    if (humanChoice === computerChoice) {
+        message = "You tied!"
+    } else if (humanChoice === "rock" && computerChoice === "scissors") {
+        message = "You win! Rock beats Scissors";
+        humanScore ++;
+    } else if (humanChoice === "rock" && computerChoice === "paper") {
+        message = "You lose. Paper beats Rock";
+        computerScore ++;
+    } else if (humanChoice === "paper" && computerChoice === "rock") {
+        message = "You win! Paper beats Rock";
+        humanScore ++;
+    } else if (humanChoice === "paper" && computerChoice === "scissors") {
+        message = "You lose. Scissors beats Paper";
+        computerScore ++;
+    } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        message = "You win! Scissors beats Paper";
+        humanScore ++;
+    } else if (humanChoice === "scissors" && computerChoice === "rock") {
+        message = "You lose. Rock beats Scissors";
+        computerScore ++;
+    } else {
+        message = "improper inputs";
+    }
+
+    console.log(message);
+}
